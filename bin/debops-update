@@ -282,6 +282,9 @@ if [ -z "${debops_playbooks}" ] ; then
   echo "DebOps playbooks have not been found, installing in ${debops_install_path}"
   echo
 
+  #We need git here
+  require_commands git
+
   # Download main debops-playbooks repository
   git clone --quiet ${DEBOPS_PLAYBOOKS_GIT_URI} ${debops_install_path}
 
